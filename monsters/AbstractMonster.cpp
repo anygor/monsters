@@ -44,3 +44,8 @@ int AbstractMonster::hit(Player& player)
 	player.setHealth(playerHealth);
 	return playerHealth;
 }
+
+std::string AbstractMonster::getAsciiSprite()
+{
+	return "-_-";
+}

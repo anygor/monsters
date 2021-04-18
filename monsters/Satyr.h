@@ -5,6 +5,7 @@ class Satyr :
 {
 public:
     int hit(Player& player);
+    std::string getAsciiSprite();
 public:
     Satyr();
 };

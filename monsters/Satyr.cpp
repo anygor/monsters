@@ -26,3 +26,8 @@ Satyr::Satyr()
 	Fists* fists = new Fists();
 	this->setWeapon(*fists);
 }
+
+std::string Satyr::getAsciiSprite() 
+{
+	return ">_<";
+}

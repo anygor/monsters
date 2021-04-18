@@ -1,10 +1,12 @@
 #pragma once
+#include <string>
 class AbstractWeapon;
 class Player;
 class AbstractMonster
 {
 public:
 	int hit(Player& player);
+	std::string getAsciiSprite();
 public:
 	AbstractMonster();
 	AbstractMonster(int health, AbstractWeapon& weapon);

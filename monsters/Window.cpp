@@ -46,7 +46,7 @@ void Window::showMap(Map& map) {
 				std::cout << " o/  ";
 			}
 		} else if (cell.getIsMonstered()) {
-			std::cout << " >_< ";
+			std::cout << " " + std::string(cell.getOccupyingMonster().getAsciiSprite()) + " ";
 		} else {
 			std::cout << "     ";
 		}
