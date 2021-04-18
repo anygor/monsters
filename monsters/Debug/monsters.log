@@ -1,0 +1,8 @@
+﻿  AbstractMonster.cpp
+  Player.cpp
+  Satyr.cpp
+  Generating Code...
+AbstractMonster.obj : error LNK2019: unresolved external symbol "public: __thiscall AbstractWeapon::AbstractWeapon(void)" (??0AbstractWeapon@@QAE@XZ) referenced in function "public: __thiscall AbstractMonster::AbstractMonster(int,class AbstractWeapon)" (??0AbstractMonster@@QAE@HVAbstractWeapon@@@Z)
+Fists.obj : error LNK2001: unresolved external symbol "public: __thiscall AbstractWeapon::AbstractWeapon(void)" (??0AbstractWeapon@@QAE@XZ)
+Player.obj : error LNK2001: unresolved external symbol "public: __thiscall AbstractWeapon::AbstractWeapon(void)" (??0AbstractWeapon@@QAE@XZ)
+C:\Users\Andrei_Gordeev\source\repos\monsters\Debug\monsters.exe : fatal error LNK1120: 1 unresolved externals
