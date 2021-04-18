@@ -143,6 +143,8 @@
     <ClCompile Include="AbstractWeapon.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Fists.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapCell.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Satyr.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -151,6 +153,8 @@
     <ClInclude Include="AbstractMonster.h" />
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="Fists.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapCell.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Satyr.h" />
     <ClInclude Include="Window.h" />
