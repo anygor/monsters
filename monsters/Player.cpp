@@ -40,5 +40,6 @@ int Player::hit(AbstractMonster& monster)
 	if (monsterHealth <= 0) { 
 		monsterHealth = 0; 
 	}
+	monster.setHealth(monsterHealth);
 	return monsterHealth;
 }

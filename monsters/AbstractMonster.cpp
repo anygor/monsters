@@ -41,5 +41,6 @@ int AbstractMonster::hit(Player& player)
 	if (playerHealth <= 0) {
 		playerHealth = 0;
 	}
+	player.setHealth(playerHealth);
 	return playerHealth;
 }
