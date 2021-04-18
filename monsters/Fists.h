@@ -1,6 +1,5 @@
 #pragma once
 #include "AbstractWeapon.h"
-class Player;
 class Fists :
     public AbstractWeapon
 {

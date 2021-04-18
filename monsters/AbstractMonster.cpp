@@ -1,4 +1,5 @@
 #include "AbstractMonster.h"
+#include "AbstractWeapon.h"
 #include "Player.h"
 
 int AbstractMonster::getHealth()
@@ -8,7 +9,7 @@ int AbstractMonster::getHealth()
 
 AbstractWeapon AbstractMonster::getWeapon() 
 {
-	return this->weapon;
+	return *this->weapon;
 }
 
 void AbstractMonster::setHealth(int health)
@@ -18,7 +19,7 @@ void AbstractMonster::setHealth(int health)
 
 void AbstractMonster::setWeapon(AbstractWeapon weapon)
 {
-	this->weapon = weapon;
+	this->weapon = &weapon;
 }
 
 AbstractMonster::AbstractMonster() 
@@ -29,7 +30,7 @@ AbstractMonster::AbstractMonster()
 AbstractMonster::AbstractMonster(int health, AbstractWeapon weapon) 
 {
 	this->health = health;
-	this->weapon = weapon;
+	this->weapon = &weapon;
 }
 
 int AbstractMonster::hit(Player& player) 

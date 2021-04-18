@@ -1,5 +1,5 @@
 #pragma once
-#include "AbstractWeapon.h"
+class AbstractWeapon;
 class Player;
 class AbstractMonster
 {
@@ -14,6 +14,6 @@ public:
 	void setWeapon(AbstractWeapon weapon);
 private:
 	int health;
-	AbstractWeapon weapon;
+	AbstractWeapon* weapon;
 };
 

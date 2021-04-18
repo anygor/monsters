@@ -1,5 +1,6 @@
 #include "Satyr.h"
 #include "Player.h"
+#include "AbstractWeapon.h"
 
 int Satyr::hit(Player& player)
 {
