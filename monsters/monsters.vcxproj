@@ -139,9 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractMonster.cpp" />
-    <ClCompile Include="AbstractWeapon.cpp" />
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="BaseMonster.cpp" />
+    <ClCompile Include="BaseWeapon.cpp" />
     <ClCompile Include="Fists.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapCell.cpp" />
@@ -153,6 +153,8 @@
   <ItemGroup>
     <ClInclude Include="AbstractMonster.h" />
     <ClInclude Include="AbstractWeapon.h" />
+    <ClInclude Include="BaseMonster.h" />
+    <ClInclude Include="BaseWeapon.h" />
     <ClInclude Include="Fists.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapCell.h" />

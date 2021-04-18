@@ -7,7 +7,7 @@ public:
 	MapCell(bool isMonstered, bool isPlayed);
 	bool getIsMonstered();
 	bool getIsPlayered();
-	AbstractMonster getOccupyingMonster();
+	AbstractMonster* getOccupyingMonster();
 	void setIsMonstered(bool isMonstered);
 	void setIsPlayered(bool isPlayered);
 	void setOccupyingMonster(AbstractMonster& occupyingMonster);

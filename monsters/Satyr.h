@@ -1,12 +1,14 @@
 #pragma once
-#include "AbstractMonster.h"
+#include "BaseMonster.h"
+class AbstractWeapon;
 class Satyr :
-    public AbstractMonster
+    public virtual BaseMonster
 {
 public:
-    int hit(Player& player);
-    std::string getAsciiSprite();
+    int hit(Player& player) override;
+    std::string getAsciiSprite() override;
 public:
     Satyr();
+    Satyr(int health, AbstractWeapon& weapon);
 };
 

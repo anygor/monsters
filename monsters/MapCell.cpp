@@ -34,9 +34,9 @@ MapCell::MapCell(bool isMonstered, bool isPlayered)
 	this->isPlayered = isPlayered;
 }
 
-AbstractMonster MapCell::getOccupyingMonster()
+AbstractMonster* MapCell::getOccupyingMonster()
 {
-	return *this->occupyingMonster;
+	return this->occupyingMonster;
 }
 
 void MapCell::setOccupyingMonster(AbstractMonster& occupyingMonster) 

@@ -2,20 +2,17 @@
 #include <string>
 class AbstractWeapon;
 class Player;
+
 class AbstractMonster
 {
 public:
-	int hit(Player& player);
-	std::string getAsciiSprite();
+	virtual int hit(Player& player) = 0;
+	virtual std::string getAsciiSprite() = 0;
 public:
-	AbstractMonster();
-	AbstractMonster(int health, AbstractWeapon& weapon);
-	int getHealth();
-	AbstractWeapon getWeapon();
-	void setHealth(int health);
-	void setWeapon(AbstractWeapon& weapon);
-private:
-	int health;
-	AbstractWeapon* weapon;
+	virtual int getHealth() = 0;
+	virtual AbstractWeapon* getWeapon() = 0;
+	virtual void setHealth(int health) = 0;
+	virtual void setWeapon(AbstractWeapon& weapon) = 0;
+
 };
 

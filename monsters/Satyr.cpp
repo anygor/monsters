@@ -6,12 +6,12 @@
 int Satyr::hit(Player& player)
 {
 	int playerHealth = player.getHealth();
-	AbstractWeapon weapon = this->getWeapon();
+	AbstractWeapon* weapon = this->getWeapon();
 	if (this->getHealth() >= 10) {
-		playerHealth -= weapon.getDamage();
+		playerHealth -= weapon->getDamage();
 	}
 	else {
-		playerHealth -= 2 * weapon.getDamage();
+		playerHealth -= 2 * weapon->getDamage();
 	}
 	if (playerHealth <= 0) {
 		playerHealth = 0;
@@ -26,6 +26,8 @@ Satyr::Satyr()
 	Fists* fists = new Fists();
 	this->setWeapon(*fists);
 }
+
+Satyr::Satyr(int health, AbstractWeapon& weapon) : BaseMonster(health, weapon) {}
 
 std::string Satyr::getAsciiSprite() 
 {

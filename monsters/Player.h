@@ -10,7 +10,7 @@ public:
 	Player();
 	Player(int health, AbstractWeapon& weapon);
 	int getHealth();
-	AbstractWeapon getWeapon();
+	AbstractWeapon* getWeapon();
 	void setHealth(int health);
 	void setWeapon(AbstractWeapon& weapon);
 private:

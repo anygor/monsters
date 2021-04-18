@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 class MapCell;
+
 class Map
 {
 public:

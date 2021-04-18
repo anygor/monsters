@@ -1,7 +1,7 @@
 #pragma once
-#include "AbstractWeapon.h"
+#include "BaseWeapon.h"
 class Sword :
-    public AbstractWeapon
+    public virtual BaseWeapon
 {
 public:
     Sword();

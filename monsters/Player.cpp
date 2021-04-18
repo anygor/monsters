@@ -6,9 +6,9 @@ int Player::getHealth()
 	return this->health;
 }
 
-AbstractWeapon Player::getWeapon()
+AbstractWeapon* Player::getWeapon()
 {
-	return *this->weapon;
+	return this->weapon;
 }
 
 void Player::setHealth(int health)
@@ -35,8 +35,8 @@ Player::Player(int health, AbstractWeapon& weapon)
 int Player::hit(AbstractMonster& monster)
 {
 	int monsterHealth = monster.getHealth();
-	AbstractWeapon playerWeapon = this->getWeapon();
-	monsterHealth -= playerWeapon.getDamage();
+	AbstractWeapon* playerWeapon = this->getWeapon();
+	monsterHealth -= playerWeapon->getDamage();
 	if (monsterHealth <= 0) { 
 		monsterHealth = 0; 
 	}

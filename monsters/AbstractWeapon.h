@@ -2,14 +2,9 @@
 class AbstractWeapon
 {
 public:
-	AbstractWeapon();
-	AbstractWeapon(int damage, int speed);
-	int getDamage();
-	int getSpeed();
-	void setDamage(int damage);
-	void setSpeed(int speed);
-private:
-	int damage;
-	int speed;
+	virtual int getDamage() = 0;
+	virtual int getSpeed() = 0;
+	virtual void setDamage(int damage) = 0;
+	virtual void setSpeed(int speed) = 0;
 };
 
