@@ -17,7 +17,7 @@ void AbstractMonster::setHealth(int health)
 	this->health = health;
 }
 
-void AbstractMonster::setWeapon(AbstractWeapon weapon)
+void AbstractMonster::setWeapon(AbstractWeapon& weapon)
 {
 	this->weapon = &weapon;
 }
@@ -27,7 +27,7 @@ AbstractMonster::AbstractMonster()
 	this->health = 100;
 }
 
-AbstractMonster::AbstractMonster(int health, AbstractWeapon weapon) 
+AbstractMonster::AbstractMonster(int health, AbstractWeapon& weapon) 
 {
 	this->health = health;
 	this->weapon = &weapon;
@@ -36,8 +36,8 @@ AbstractMonster::AbstractMonster(int health, AbstractWeapon weapon)
 int AbstractMonster::hit(Player& player) 
 {
 	int playerHealth = player.getHealth();
-	AbstractWeapon playerWeapon = this->getWeapon();
-	playerHealth -= playerWeapon.getDamage();
+	AbstractWeapon weapon = this->getWeapon();
+	playerHealth -= weapon.getDamage();
 	if (playerHealth <= 0) {
 		playerHealth = 0;
 	}

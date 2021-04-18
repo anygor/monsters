@@ -16,7 +16,7 @@ void Player::setHealth(int health)
 	this->health = health;
 }
 
-void Player::setWeapon(AbstractWeapon weapon)
+void Player::setWeapon(AbstractWeapon& weapon)
 {
 	this->weapon = &weapon;
 }
@@ -26,7 +26,7 @@ Player::Player()
 	this->health = 100;
 }
 
-Player::Player(int health, AbstractWeapon weapon)
+Player::Player(int health, AbstractWeapon& weapon)
 {
 	this->health = health;
 	this->weapon = &weapon;

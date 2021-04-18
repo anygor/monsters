@@ -7,11 +7,11 @@ public:
 	int hit(Player& player);
 public:
 	AbstractMonster();
-	AbstractMonster(int health, AbstractWeapon weapon);
+	AbstractMonster(int health, AbstractWeapon& weapon);
 	int getHealth();
 	AbstractWeapon getWeapon();
 	void setHealth(int health);
-	void setWeapon(AbstractWeapon weapon);
+	void setWeapon(AbstractWeapon& weapon);
 private:
 	int health;
 	AbstractWeapon* weapon;

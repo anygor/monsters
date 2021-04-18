@@ -5,5 +5,7 @@ class Satyr :
 {
 public:
     int hit(Player& player);
+public:
+    Satyr();
 };
 
