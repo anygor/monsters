@@ -142,6 +142,8 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="BaseMonster.cpp" />
     <ClCompile Include="BaseWeapon.cpp" />
+    <ClCompile Include="Demon.cpp" />
+    <ClCompile Include="Fiend.cpp" />
     <ClCompile Include="Fists.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapCell.cpp" />
@@ -155,6 +157,8 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="BaseMonster.h" />
     <ClInclude Include="BaseWeapon.h" />
+    <ClInclude Include="Demon.h" />
+    <ClInclude Include="Fiend.h" />
     <ClInclude Include="Fists.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapCell.h" />

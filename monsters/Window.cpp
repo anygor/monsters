@@ -9,8 +9,10 @@
 #include <string>
 
 void Window::launch() {
+	bool lost = false;
 	Map map = *(new Map());
 	Player* player = new Player();
+	player->setHealth(1000);
 	player->setWeapon(*(new Sword()));
 	std::list<MapCell> gameMap = map.getMap();
 	for (std::list<MapCell>::iterator cell = gameMap.begin(); cell != gameMap.end(); ++cell) {
@@ -18,21 +20,24 @@ void Window::launch() {
 		map.setMap(gameMap);
 		showMap(map);
 		if (cell->getIsMonstered()) {
-			showFight(*player, *(new Satyr()));
+			showFight(*player, *(cell->getOccupyingMonster()));
 			if (player->getHealth() == 0) {
 				std::cout << "\nYou were lethaly wounded\n";
+				lost = true;
 				break;
 			}
 			cell->setIsMonstered(false);
 		}
 		cell->setIsPlayered(false);
 	}
-	gameMap.pop_back();
-	MapCell victoryCell = *(new MapCell(false, true));
-	gameMap.push_back(victoryCell);
-	map.setMap(gameMap);
-	showMap(map);
-	std::cout << "You have completed your journey\n";
+	if (!lost) {
+		gameMap.pop_back();
+		MapCell victoryCell = *(new MapCell(false, true));
+		gameMap.push_back(victoryCell);
+		map.setMap(gameMap);
+		showMap(map);
+		std::cout << "You have completed your journey\n";
+	}
 }
 
 void Window::showMap(Map& map) {
@@ -58,26 +63,26 @@ void Window::showMap(Map& map) {
 void Window::showFight(Player& player, AbstractMonster& monster) {
 	while (player.getHealth() > 0 && monster.getHealth() > 0) {
 		system("cls");
-		std::cout << " o/   >_< \n";
+		std::cout << " o/   " + monster.getAsciiSprite() + " \n";
 		std::cout << std::string(std::to_string(player.getHealth()) + "    " + std::to_string(monster.getHealth()) + "\n");
 		Sleep(1000);
 		player.hit(monster);
 		system("cls");
-		std::cout << "  o/  >_< \n";
+		std::cout << "  o/  " + monster.getAsciiSprite() + " \n";
 		std::cout << std::string(std::to_string(player.getHealth()) + "    " + std::to_string(monster.getHealth()) + "\n");
 		Sleep(100);
 		system("cls");
-		std::cout << " o/   >_< \n";
+		std::cout << " o/   " + monster.getAsciiSprite() + " \n";
 		std::cout << std::string(std::to_string(player.getHealth()) + "    " + std::to_string(monster.getHealth()) + "\n");
 		if (monster.getHealth() > 0) {
 			Sleep(1000);
 			monster.hit(player);
 			system("cls");
-			std::cout << " o/  >_<  \n";
+			std::cout << " o/  " + monster.getAsciiSprite() + "  \n";
 			std::cout << std::string(std::to_string(player.getHealth()) + "    " + std::to_string(monster.getHealth()) + "\n");
 			Sleep(100);
 			system("cls");
-			std::cout << " o/   >_< \n";
+			std::cout << " o/   " + monster.getAsciiSprite() + " \n";
 			std::cout << std::string(std::to_string(player.getHealth()) + "    " + std::to_string(monster.getHealth()) + "\n");
 		}
 	}

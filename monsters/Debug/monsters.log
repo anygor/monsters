@@ -1,7 +1,2 @@
-﻿  Fists.cpp
-  Satyr.cpp
-  Sword.cpp
-C:\Users\Andrei_Gordeev\source\repos\monsters\monsters\Sword.cpp(5,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Window.cpp
-  Generating Code...
+﻿  Demon.cpp
   monsters.vcxproj -> C:\Users\Andrei_Gordeev\source\repos\monsters\Debug\monsters.exe
