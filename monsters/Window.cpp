@@ -8,45 +8,46 @@
 #include <Windows.h>
 #include <string>
 #include <vector>
-#include "SatyrFactory.h"
-#include "FiendFactory.h"
-#include "DemonFactory.h"
+#include "MonsterFactory.h"
+#include "EasyFactory.h"
+#include "HardFactory.h"
 #include "MonsterFactory.h"
 #include <ctime>
 
 void Window::launch() {
 	bool lost = false;
-	std::cout << "Set the difficulty:\n1 - easy\n2 - medium\n3 - hard\n";
+	std::cout << "Set the difficulty:\n1 - easy\n2 - hard\n";
 	int difficulty;
 	std::cin >> difficulty;
-	SatyrFactory satyrFactory;
-	FiendFactory fiendFactory;
-	DemonFactory demonFactory;
-	std::vector<MonsterFactory*> factories;
-	factories.push_back(&satyrFactory);
-	factories.push_back(&fiendFactory);
-	factories.push_back(&demonFactory);
+
 	std::list<MapCell> gameMap;
-	for (int i = 0; i < 4 * difficulty; i++) {
+	MonsterFactory* factory;
+	switch (difficulty)
+	{
+	case 1:{
+		factory = new EasyFactory();
+		break;
+	}
+	case 2: {
+		factory = new HardFactory();
+		break;
+	}
+
+	default:
+		factory = new EasyFactory();
+	}
+
+	for (int i = 0; i < 12; i++) {
 		srand(time(0));
-		bool enemy;
 		int probability = std::rand() % 101;
-		if (probability <= difficulty * 25) {
-			probability = std::rand() % 101;
-			if (probability <= (100 - (difficulty * 10))) {
-				gameMap.push_back(*(new MapCell(true, false, *(factories.at((difficulty - 1) % 3)->createMonster()))));
-			}
-			else if (probability <= (difficulty * 7)){
-				gameMap.push_back(*(new MapCell(true, false, *(factories.at(difficulty % 3)->createMonster()))));
-			}
-			else {
-				gameMap.push_back(*(new MapCell(true, false, *(factories.at((difficulty + 1) % 3)->createMonster()))));
-			}
+		if (probability <= 100) {
+			gameMap.push_back(*(new MapCell(true, false, *(factory->createMonster()))));
 		}
 		else {
 			gameMap.push_back(*(new MapCell(false, false)));
 		}
 	}
+
 	Map map = *(new Map());
 	map.setMap(gameMap);
 
